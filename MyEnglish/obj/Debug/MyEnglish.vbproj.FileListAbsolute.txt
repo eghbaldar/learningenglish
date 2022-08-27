@@ -1,0 +1,13 @@
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\bin\Debug\MyEnglish.exe.config
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\bin\Debug\MyEnglish.exe
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\bin\Debug\MyEnglish.pdb
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\bin\Debug\MyEnglish.xml
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.vbprojAssemblyReference.cache
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.Form1.resources
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.Resources.resources
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.vbproj.GenerateResource.cache
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.vbproj.CoreCompileInputs.cache
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.exe
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.xml
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.pdb
+C:\Users\iranfilmport\source\repos\MyEnglish\MyEnglish\obj\Debug\MyEnglish.FormQuiz.resources
