@@ -28,16 +28,17 @@ Partial Class FormQuiz
         Me.txtEnglish = New System.Windows.Forms.TextBox()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataSet = New MyEnglish.DataSet()
-        Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DatetimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EnglishDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FarsiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet = New MyEnglish.DataSet()
+        Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
+        Me.lblCount = New System.Windows.Forms.Label()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblFarsi
@@ -45,7 +46,7 @@ Partial Class FormQuiz
         Me.lblFarsi.BackColor = System.Drawing.Color.Cornsilk
         Me.lblFarsi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblFarsi.Font = New System.Drawing.Font("B Nazanin", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
-        Me.lblFarsi.Location = New System.Drawing.Point(12, 9)
+        Me.lblFarsi.Location = New System.Drawing.Point(12, 62)
         Me.lblFarsi.Name = "lblFarsi"
         Me.lblFarsi.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblFarsi.Size = New System.Drawing.Size(673, 134)
@@ -56,7 +57,7 @@ Partial Class FormQuiz
         '
         Me.txtEnglish.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.txtEnglish.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEnglish.Location = New System.Drawing.Point(12, 155)
+        Me.txtEnglish.Location = New System.Drawing.Point(12, 208)
         Me.txtEnglish.Name = "txtEnglish"
         Me.txtEnglish.Size = New System.Drawing.Size(673, 38)
         Me.txtEnglish.TabIndex = 1
@@ -71,7 +72,7 @@ Partial Class FormQuiz
         Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.IdDataGridViewTextBoxColumn, Me.DatetimeDataGridViewTextBoxColumn, Me.EnglishDataGridViewTextBoxColumn, Me.FarsiDataGridViewTextBoxColumn})
         Me.DataGridView.DataSource = Me.TbSentencesBindingSource
         Me.DataGridView.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.DataGridView.Location = New System.Drawing.Point(0, 222)
+        Me.DataGridView.Location = New System.Drawing.Point(0, 268)
         Me.DataGridView.MultiSelect = False
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.ReadOnly = True
@@ -86,20 +87,6 @@ Partial Class FormQuiz
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 50
-        '
-        'DataSet
-        '
-        Me.DataSet.DataSetName = "DataSet"
-        Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TbSentencesBindingSource
-        '
-        Me.TbSentencesBindingSource.DataMember = "tbSentences"
-        Me.TbSentencesBindingSource.DataSource = Me.DataSet
-        '
-        'TbSentencesTableAdapter
-        '
-        Me.TbSentencesTableAdapter.ClearBeforeFill = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -129,12 +116,37 @@ Partial Class FormQuiz
         Me.FarsiDataGridViewTextBoxColumn.Name = "FarsiDataGridViewTextBoxColumn"
         Me.FarsiDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'TbSentencesBindingSource
+        '
+        Me.TbSentencesBindingSource.DataMember = "tbSentences"
+        Me.TbSentencesBindingSource.DataSource = Me.DataSet
+        '
+        'DataSet
+        '
+        Me.DataSet.DataSetName = "DataSet"
+        Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TbSentencesTableAdapter
+        '
+        Me.TbSentencesTableAdapter.ClearBeforeFill = True
+        '
+        'lblCount
+        '
+        Me.lblCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.Location = New System.Drawing.Point(12, 9)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(673, 53)
+        Me.lblCount.TabIndex = 6
+        Me.lblCount.Text = "0"
+        Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FormQuiz
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGoldenrod
-        Me.ClientSize = New System.Drawing.Size(700, 201)
+        Me.ClientSize = New System.Drawing.Size(700, 259)
+        Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.DataGridView)
         Me.Controls.Add(Me.txtEnglish)
         Me.Controls.Add(Me.lblFarsi)
@@ -146,8 +158,8 @@ Partial Class FormQuiz
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Quiz"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,4 +176,5 @@ Partial Class FormQuiz
     Friend WithEvents DatetimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EnglishDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FarsiDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents lblCount As Label
 End Class

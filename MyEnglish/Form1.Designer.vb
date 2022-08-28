@@ -30,19 +30,24 @@ Partial Class Form1
         Me.txtFarsi = New System.Windows.Forms.TextBox()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblUpdateID = New System.Windows.Forms.Label()
         Me.EnglishDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FarsiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New MyEnglish.DataSet()
         Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip.SuspendLayout()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtEnglish
         '
-        Me.txtEnglish.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtEnglish.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtEnglish.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEnglish.Location = New System.Drawing.Point(13, 58)
         Me.txtEnglish.Name = "txtEnglish"
@@ -107,6 +112,31 @@ Partial Class Form1
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 50
         '
+        'ContextMenuStrip
+        '
+        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem, Me.UpdateToolStripMenuItem})
+        Me.ContextMenuStrip.Name = "ContextMenuStrip"
+        Me.ContextMenuStrip.Size = New System.Drawing.Size(113, 48)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'UpdateToolStripMenuItem
+        '
+        Me.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem"
+        Me.UpdateToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.UpdateToolStripMenuItem.Text = "Update"
+        '
+        'lblUpdateID
+        '
+        Me.lblUpdateID.Location = New System.Drawing.Point(648, 9)
+        Me.lblUpdateID.Name = "lblUpdateID"
+        Me.lblUpdateID.Size = New System.Drawing.Size(39, 22)
+        Me.lblUpdateID.TabIndex = 5
+        '
         'EnglishDataGridViewTextBoxColumn
         '
         Me.EnglishDataGridViewTextBoxColumn.DataPropertyName = "english"
@@ -142,6 +172,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(698, 437)
+        Me.Controls.Add(Me.lblUpdateID)
         Me.Controls.Add(Me.DataGridView)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtFarsi)
@@ -150,12 +181,12 @@ Partial Class Form1
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "My English"
+        Me.Text = "My English v2"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip.ResumeLayout(False)
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -174,4 +205,8 @@ Partial Class Form1
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents EnglishDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FarsiDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpdateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblUpdateID As Label
 End Class

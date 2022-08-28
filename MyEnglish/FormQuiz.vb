@@ -5,6 +5,7 @@
 
         Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences)
         lblFarsi.Text = DataGridView.Item(4, i).Value
+        lblCount.Text = DataGridView.Rows.Count
 
     End Sub
 
@@ -17,6 +18,7 @@
                             MsgBox("Correct!", MsgBoxStyle.Information, "")
                             i += 1
                             lblFarsi.Text = DataGridView.Item(4, i).Value
+                            lblCount.Text = Val(lblCount.Text) - 1
                             txtEnglish.Clear()
                         Else
                             If MessageBox.Show("Would you want try it again?" & vbCrLf & "[YES = Let's Try] [NO = Next Question]", "", MessageBoxButtons.YesNo) = DialogResult.Yes Then
@@ -26,6 +28,7 @@
                                 txtEnglish.Clear()
                                 i += 1
                                 lblFarsi.Text = DataGridView.Item(4, i).Value
+                                lblCount.Text = Val(lblCount.Text) - 1
                             End If
 
                         End If
@@ -38,6 +41,11 @@
             txtEnglish.Clear()
             txtEnglish.Select()
         End Try
+    End Sub
+
+    Private Sub FormQuiz_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Form1.Show()
+        Me.Hide()
     End Sub
 
 End Class
