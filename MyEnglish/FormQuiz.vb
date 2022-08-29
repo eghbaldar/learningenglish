@@ -2,8 +2,8 @@
 
     Dim i As Integer = 0
     Private Sub FormQuiz_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences)
+        'TODO: This line of code loads data into the 'DataSet.tbSentencesRandom' table. You can move, or remove it, as needed.
+        Me.TbSentencesRandomTableAdapter.Fill(Me.DataSet.tbSentencesRandom)
         lblFarsi.Text = DataGridView.Item(4, i).Value
         lblCount.Text = DataGridView.Rows.Count
 

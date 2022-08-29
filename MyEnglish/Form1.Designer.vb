@@ -30,19 +30,19 @@ Partial Class Form1
         Me.txtFarsi = New System.Windows.Forms.TextBox()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lblUpdateID = New System.Windows.Forms.Label()
         Me.EnglishDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FarsiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New MyEnglish.DataSet()
+        Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblUpdateID = New System.Windows.Forms.Label()
         Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip.SuspendLayout()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtEnglish
@@ -112,31 +112,6 @@ Partial Class Form1
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 50
         '
-        'ContextMenuStrip
-        '
-        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem, Me.UpdateToolStripMenuItem})
-        Me.ContextMenuStrip.Name = "ContextMenuStrip"
-        Me.ContextMenuStrip.Size = New System.Drawing.Size(113, 48)
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
-        'UpdateToolStripMenuItem
-        '
-        Me.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem"
-        Me.UpdateToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.UpdateToolStripMenuItem.Text = "Update"
-        '
-        'lblUpdateID
-        '
-        Me.lblUpdateID.Location = New System.Drawing.Point(648, 9)
-        Me.lblUpdateID.Name = "lblUpdateID"
-        Me.lblUpdateID.Size = New System.Drawing.Size(39, 22)
-        Me.lblUpdateID.TabIndex = 5
-        '
         'EnglishDataGridViewTextBoxColumn
         '
         Me.EnglishDataGridViewTextBoxColumn.DataPropertyName = "english"
@@ -163,6 +138,31 @@ Partial Class Form1
         Me.DataSet.DataSetName = "DataSet"
         Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'ContextMenuStrip
+        '
+        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem, Me.UpdateToolStripMenuItem})
+        Me.ContextMenuStrip.Name = "ContextMenuStrip"
+        Me.ContextMenuStrip.Size = New System.Drawing.Size(113, 48)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'UpdateToolStripMenuItem
+        '
+        Me.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem"
+        Me.UpdateToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.UpdateToolStripMenuItem.Text = "Update"
+        '
+        'lblUpdateID
+        '
+        Me.lblUpdateID.Location = New System.Drawing.Point(648, 9)
+        Me.lblUpdateID.Name = "lblUpdateID"
+        Me.lblUpdateID.Size = New System.Drawing.Size(39, 22)
+        Me.lblUpdateID.TabIndex = 5
+        '
         'TbSentencesTableAdapter
         '
         Me.TbSentencesTableAdapter.ClearBeforeFill = True
@@ -181,14 +181,14 @@ Partial Class Form1
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimizeBox = False
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "My English v2"
+        Me.Text = "My English v3"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip.ResumeLayout(False)
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
