@@ -24,3 +24,4 @@ D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.vbproj.CoreCompileInputs
 D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.exe
 D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.xml
 D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.pdb
+D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.frmShow.resources

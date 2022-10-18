@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.ComponentModel
+
+Public Class Form1
 
     Private Sub txtEnglish_KeyDown(sender As Object, e As KeyEventArgs) Handles txtEnglish.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -80,6 +82,15 @@
                     txtEnglish.Select()
                 End If
         End Select
+    End Sub
+
+    Private Sub BtnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
+        Me.Hide()
+        FormQuiz.Show()
+    End Sub
+
+    Private Sub BtnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
+        frmShow.ShowDialog()
     End Sub
 
 End Class

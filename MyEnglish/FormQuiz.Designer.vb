@@ -28,20 +28,20 @@ Partial Class FormQuiz
         Me.txtEnglish = New System.Windows.Forms.TextBox()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lblCount = New System.Windows.Forms.Label()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DatetimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EnglishDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FarsiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet = New MyEnglish.DataSet()
-        Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
         Me.TbSentencesRandomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet = New MyEnglish.DataSet()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
         Me.TbSentencesRandomTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesRandomTableAdapter()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbSentencesRandomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblFarsi
@@ -58,7 +58,7 @@ Partial Class FormQuiz
         '
         'txtEnglish
         '
-        Me.txtEnglish.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.txtEnglish.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtEnglish.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEnglish.Location = New System.Drawing.Point(12, 208)
         Me.txtEnglish.Name = "txtEnglish"
@@ -91,16 +91,6 @@ Partial Class FormQuiz
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 50
         '
-        'lblCount
-        '
-        Me.lblCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCount.Location = New System.Drawing.Point(12, 9)
-        Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(673, 53)
-        Me.lblCount.TabIndex = 6
-        Me.lblCount.Text = "0"
-        Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'IdDataGridViewTextBoxColumn
         '
         Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
@@ -129,24 +119,34 @@ Partial Class FormQuiz
         Me.FarsiDataGridViewTextBoxColumn.Name = "FarsiDataGridViewTextBoxColumn"
         Me.FarsiDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'TbSentencesBindingSource
+        'TbSentencesRandomBindingSource
         '
-        Me.TbSentencesBindingSource.DataMember = "tbSentences"
-        Me.TbSentencesBindingSource.DataSource = Me.DataSet
+        Me.TbSentencesRandomBindingSource.DataMember = "tbSentencesRandom"
+        Me.TbSentencesRandomBindingSource.DataSource = Me.DataSet
         '
         'DataSet
         '
         Me.DataSet.DataSetName = "DataSet"
         Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'lblCount
+        '
+        Me.lblCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.Location = New System.Drawing.Point(12, 9)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(673, 53)
+        Me.lblCount.TabIndex = 6
+        Me.lblCount.Text = "0"
+        Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TbSentencesBindingSource
+        '
+        Me.TbSentencesBindingSource.DataMember = "tbSentences"
+        Me.TbSentencesBindingSource.DataSource = Me.DataSet
+        '
         'TbSentencesTableAdapter
         '
         Me.TbSentencesTableAdapter.ClearBeforeFill = True
-        '
-        'TbSentencesRandomBindingSource
-        '
-        Me.TbSentencesRandomBindingSource.DataMember = "tbSentencesRandom"
-        Me.TbSentencesRandomBindingSource.DataSource = Me.DataSet
         '
         'TbSentencesRandomTableAdapter
         '
@@ -170,9 +170,9 @@ Partial Class FormQuiz
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Quiz"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbSentencesRandomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

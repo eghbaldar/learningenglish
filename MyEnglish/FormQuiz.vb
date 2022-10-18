@@ -3,6 +3,7 @@
     Dim i As Integer = 0
     Private Sub FormQuiz_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet.tbSentencesRandom' table. You can move, or remove it, as needed.
+
         Me.TbSentencesRandomTableAdapter.Fill(Me.DataSet.tbSentencesRandom)
         lblFarsi.Text = DataGridView.Item(4, i).Value
         lblCount.Text = DataGridView.Rows.Count
@@ -47,5 +48,12 @@
         Form1.Show()
         Me.Hide()
     End Sub
+
+    Protected Overrides Function ProcessCmdKey(ByRef msg As Message, ByVal keyData As Keys) As Boolean
+        If keyData = Keys.Escape Then
+            Me.Close()
+        End If
+        Return MyBase.ProcessCmdKey(msg, keyData)
+    End Function
 
 End Class

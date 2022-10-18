@@ -37,12 +37,32 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:MyEnglish.DataSet.Sentences_FirstDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:MyEnglish.DataSet.Sentences_NextDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:MyEnglish.DataSet.tbSentencesRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:MyEnglish.DataSet.tbSentencesRandomRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MyEnglish.DataSet.Sentences_FirstRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:MyEnglish.DataSet.Sentences_NextRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -57,12 +77,32 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:MyEnglish.DataSet.Sentences_FirstRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:MyEnglish.DataSet.Sentences_NextRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:MyEnglish.DataSetTableAdapters.tbSentencesRandomTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MyEnglish.DataSetTableAdapters.Sentences_FirstTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:MyEnglish.DataSetTableAdapters.Sentences_NextTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
