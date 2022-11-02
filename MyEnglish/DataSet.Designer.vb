@@ -396,6 +396,8 @@ Partial Public Class DataSet
         
         Private columnfarsi As Global.System.Data.DataColumn
         
+        Private columnstar As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -464,6 +466,14 @@ Partial Public Class DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property starColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -500,9 +510,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddtbSentencesRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String) As tbSentencesRow
+        Public Overloads Function AddtbSentencesRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String, ByVal star As Boolean) As tbSentencesRow
             Dim rowtbSentencesRow As tbSentencesRow = CType(Me.NewRow,tbSentencesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi}
+            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi, star}
             rowtbSentencesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtbSentencesRow)
             Return rowtbSentencesRow
@@ -529,6 +539,7 @@ Partial Public Class DataSet
             Me.columndatetime = MyBase.Columns("datetime")
             Me.columnenglish = MyBase.Columns("english")
             Me.columnfarsi = MyBase.Columns("farsi")
+            Me.columnstar = MyBase.Columns("star")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -542,6 +553,8 @@ Partial Public Class DataSet
             MyBase.Columns.Add(Me.columnenglish)
             Me.columnfarsi = New Global.System.Data.DataColumn("farsi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfarsi)
+            Me.columnstar = New Global.System.Data.DataColumn("star", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstar)
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
             Me.columnid.AutoIncrementStep = -1
@@ -694,6 +707,8 @@ Partial Public Class DataSet
         
         Private columnfarsi As Global.System.Data.DataColumn
         
+        Private columnstar As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -762,6 +777,14 @@ Partial Public Class DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property starColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -798,9 +821,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddtbSentencesRandomRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String) As tbSentencesRandomRow
+        Public Overloads Function AddtbSentencesRandomRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String, ByVal star As Boolean) As tbSentencesRandomRow
             Dim rowtbSentencesRandomRow As tbSentencesRandomRow = CType(Me.NewRow,tbSentencesRandomRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi}
+            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi, star}
             rowtbSentencesRandomRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtbSentencesRandomRow)
             Return rowtbSentencesRandomRow
@@ -827,6 +850,7 @@ Partial Public Class DataSet
             Me.columndatetime = MyBase.Columns("datetime")
             Me.columnenglish = MyBase.Columns("english")
             Me.columnfarsi = MyBase.Columns("farsi")
+            Me.columnstar = MyBase.Columns("star")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -840,6 +864,8 @@ Partial Public Class DataSet
             MyBase.Columns.Add(Me.columnenglish)
             Me.columnfarsi = New Global.System.Data.DataColumn("farsi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfarsi)
+            Me.columnstar = New Global.System.Data.DataColumn("star", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstar)
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
             Me.columnid.AutoIncrementStep = -1
@@ -992,6 +1018,8 @@ Partial Public Class DataSet
         
         Private columnfarsi As Global.System.Data.DataColumn
         
+        Private columnstar As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1060,6 +1088,14 @@ Partial Public Class DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property starColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1096,9 +1132,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSentences_FirstRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String) As Sentences_FirstRow
+        Public Overloads Function AddSentences_FirstRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String, ByVal star As Boolean) As Sentences_FirstRow
             Dim rowSentences_FirstRow As Sentences_FirstRow = CType(Me.NewRow,Sentences_FirstRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi}
+            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi, star}
             rowSentences_FirstRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSentences_FirstRow)
             Return rowSentences_FirstRow
@@ -1125,6 +1161,7 @@ Partial Public Class DataSet
             Me.columndatetime = MyBase.Columns("datetime")
             Me.columnenglish = MyBase.Columns("english")
             Me.columnfarsi = MyBase.Columns("farsi")
+            Me.columnstar = MyBase.Columns("star")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1138,6 +1175,8 @@ Partial Public Class DataSet
             MyBase.Columns.Add(Me.columnenglish)
             Me.columnfarsi = New Global.System.Data.DataColumn("farsi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfarsi)
+            Me.columnstar = New Global.System.Data.DataColumn("star", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstar)
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
             Me.columnid.AutoIncrementStep = -1
@@ -1290,6 +1329,8 @@ Partial Public Class DataSet
         
         Private columnfarsi As Global.System.Data.DataColumn
         
+        Private columnstar As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1358,6 +1399,14 @@ Partial Public Class DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property starColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1394,9 +1443,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSentences_NextRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String) As Sentences_NextRow
+        Public Overloads Function AddSentences_NextRow(ByVal datetime As Date, ByVal english As String, ByVal farsi As String, ByVal star As Boolean) As Sentences_NextRow
             Dim rowSentences_NextRow As Sentences_NextRow = CType(Me.NewRow,Sentences_NextRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi}
+            Dim columnValuesArray() As Object = New Object() {Nothing, datetime, english, farsi, star}
             rowSentences_NextRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSentences_NextRow)
             Return rowSentences_NextRow
@@ -1423,6 +1472,7 @@ Partial Public Class DataSet
             Me.columndatetime = MyBase.Columns("datetime")
             Me.columnenglish = MyBase.Columns("english")
             Me.columnfarsi = MyBase.Columns("farsi")
+            Me.columnstar = MyBase.Columns("star")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1436,6 +1486,8 @@ Partial Public Class DataSet
             MyBase.Columns.Add(Me.columnenglish)
             Me.columnfarsi = New Global.System.Data.DataColumn("farsi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfarsi)
+            Me.columnstar = New Global.System.Data.DataColumn("star", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstar)
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
             Me.columnid.AutoIncrementStep = -1
@@ -1645,6 +1697,21 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property star() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbSentences.starColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'star' in table 'tbSentences' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbSentences.starColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdatetimeNull() As Boolean
             Return Me.IsNull(Me.tabletbSentences.datetimeColumn)
         End Function
@@ -1677,6 +1744,18 @@ Partial Public Class DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetfarsiNull()
             Me(Me.tabletbSentences.farsiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsstarNull() As Boolean
+            Return Me.IsNull(Me.tabletbSentences.starColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetstarNull()
+            Me(Me.tabletbSentences.starColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1753,6 +1832,21 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property star() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbSentencesRandom.starColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'star' in table 'tbSentencesRandom' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbSentencesRandom.starColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdatetimeNull() As Boolean
             Return Me.IsNull(Me.tabletbSentencesRandom.datetimeColumn)
         End Function
@@ -1785,6 +1879,18 @@ Partial Public Class DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetfarsiNull()
             Me(Me.tabletbSentencesRandom.farsiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsstarNull() As Boolean
+            Return Me.IsNull(Me.tabletbSentencesRandom.starColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetstarNull()
+            Me(Me.tabletbSentencesRandom.starColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1861,6 +1967,21 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property star() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSentences_First.starColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'star' in table 'Sentences_First' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSentences_First.starColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdatetimeNull() As Boolean
             Return Me.IsNull(Me.tableSentences_First.datetimeColumn)
         End Function
@@ -1893,6 +2014,18 @@ Partial Public Class DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetfarsiNull()
             Me(Me.tableSentences_First.farsiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsstarNull() As Boolean
+            Return Me.IsNull(Me.tableSentences_First.starColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetstarNull()
+            Me(Me.tableSentences_First.starColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1969,6 +2102,21 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property star() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSentences_Next.starColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'star' in table 'Sentences_Next' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSentences_Next.starColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdatetimeNull() As Boolean
             Return Me.IsNull(Me.tableSentences_Next.datetimeColumn)
         End Function
@@ -2001,6 +2149,18 @@ Partial Public Class DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetfarsiNull()
             Me(Me.tableSentences_Next.farsiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsstarNull() As Boolean
+            Return Me.IsNull(Me.tableSentences_Next.starColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetstarNull()
+            Me(Me.tableSentences_Next.starColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2282,15 +2442,17 @@ Namespace DataSetTableAdapters
             tableMapping.ColumnMappings.Add("datetime", "datetime")
             tableMapping.ColumnMappings.Add("english", "english")
             tableMapping.ColumnMappings.Add("farsi", "farsi")
+            tableMapping.ColumnMappings.Add("star", "star")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSentences] ([datetime], [english], [farsi]) VALUES (@datetim"& _ 
-                "e, @english, @farsi)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSentences] ([datetime], [english], [farsi], [star]) VALUES ("& _ 
+                "@datetime, @english, @farsi, @star)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@datetime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datetime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@english", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "english", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@farsi", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farsi", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@star", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "star", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2303,11 +2465,10 @@ Namespace DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        id, datetime, english, farsi"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.tbSentences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDE"& _ 
-                "R BY datetime DESC"
+            Me._commandCollection(0).CommandText = "SELECT        id, datetime, english, farsi,star"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.tbSentences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY datetime DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -2316,7 +2477,7 @@ Namespace DataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT      english, farsi"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.tbSentences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where id=@id"
+            Me._commandCollection(2).CommandText = "SELECT datetime, english, farsi, id, star FROM dbo.tbSentences WHERE (id = @id)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
@@ -2333,6 +2494,12 @@ Namespace DataSetTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@english", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "english", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@farsi", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "farsi", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "UPDATE [tbSentences]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"set star=@star"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where id=@id"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@star", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "star", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2417,7 +2584,7 @@ Namespace DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal datetime As Global.System.Nullable(Of Date), ByVal english As String, ByVal farsi As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal datetime As Global.System.Nullable(Of Date), ByVal english As String, ByVal farsi As String, ByVal star As Global.System.Nullable(Of Boolean)) As Integer
             If (datetime.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(datetime.Value,Date)
             Else
@@ -2432,6 +2599,11 @@ Namespace DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(farsi,String)
+            End If
+            If (star.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(star.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2520,6 +2692,34 @@ Namespace DataSetTableAdapters
                 command.Parameters(1).Value = CType(farsi,String)
             End If
             command.Parameters(2).Value = CType(id,Long)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateStar(ByVal star As Global.System.Nullable(Of Boolean), ByVal id As Long) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
+            If (star.HasValue = true) Then
+                command.Parameters(0).Value = CType(star.Value,Boolean)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            command.Parameters(1).Value = CType(id,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2668,15 +2868,17 @@ Namespace DataSetTableAdapters
             tableMapping.ColumnMappings.Add("datetime", "datetime")
             tableMapping.ColumnMappings.Add("english", "english")
             tableMapping.ColumnMappings.Add("farsi", "farsi")
+            tableMapping.ColumnMappings.Add("star", "star")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSentences] ([datetime], [english], [farsi]) VALUES (@datetim"& _ 
-                "e, @english, @farsi)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSentences] ([datetime], [english], [farsi], [star]) VALUES ("& _ 
+                "@datetime, @english, @farsi, @star)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@datetime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datetime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@english", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "english", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@farsi", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farsi", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@star", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "star", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2692,7 +2894,7 @@ Namespace DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "select"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"from"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"[dbo].[tbSentences]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"order by newid()"
+            Me._commandCollection(0).CommandText = "select"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"from"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"[dbo].[tbSentences]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where star=1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"order by id desc"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2752,7 +2954,7 @@ Namespace DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal datetime As Global.System.Nullable(Of Date), ByVal english As String, ByVal farsi As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal datetime As Global.System.Nullable(Of Date), ByVal english As String, ByVal farsi As String, ByVal star As Global.System.Nullable(Of Boolean)) As Integer
             If (datetime.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(datetime.Value,Date)
             Else
@@ -2767,6 +2969,11 @@ Namespace DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(farsi,String)
+            End If
+            If (star.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(star.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2915,15 +3122,17 @@ Namespace DataSetTableAdapters
             tableMapping.ColumnMappings.Add("datetime", "datetime")
             tableMapping.ColumnMappings.Add("english", "english")
             tableMapping.ColumnMappings.Add("farsi", "farsi")
+            tableMapping.ColumnMappings.Add("star", "star")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSentences] ([datetime], [english], [farsi]) VALUES (@datetim"& _ 
-                "e, @english, @farsi)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbSentences] ([datetime], [english], [farsi], [star]) VALUES ("& _ 
+                "@datetime, @english, @farsi, @star)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@datetime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "datetime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@english", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "english", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@farsi", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farsi", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@star", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "star", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2939,9 +3148,9 @@ Namespace DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        id, datetime, english, farsi"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.tbSentences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
-                "E        (id ="&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELECT        MIN(id) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                             FROM            dbo.tbSentences AS tbSentences_1))"
+            Me._commandCollection(0).CommandText = "SELECT        id, datetime, english, farsi,star"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.tbSentences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id ="&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                             (SELECT        MIN(id) AS Expr"& _ 
+                "1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                               FROM            dbo.tbSentences AS tbSentences"& _ 
+                "_1))"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3001,7 +3210,7 @@ Namespace DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal datetime As Global.System.Nullable(Of Date), ByVal english As String, ByVal farsi As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal datetime As Global.System.Nullable(Of Date), ByVal english As String, ByVal farsi As String, ByVal star As Global.System.Nullable(Of Boolean)) As Integer
             If (datetime.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(datetime.Value,Date)
             Else
@@ -3016,6 +3225,11 @@ Namespace DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(farsi,String)
+            End If
+            If (star.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(star.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3164,6 +3378,7 @@ Namespace DataSetTableAdapters
             tableMapping.ColumnMappings.Add("datetime", "datetime")
             tableMapping.ColumnMappings.Add("english", "english")
             tableMapping.ColumnMappings.Add("farsi", "farsi")
+            tableMapping.ColumnMappings.Add("star", "star")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         

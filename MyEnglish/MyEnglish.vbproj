@@ -175,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="197374.ico" />
+    <None Include="Resources\starempty.png" />
+    <None Include="Resources\starfull.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -2,7 +2,9 @@
 
 Public Class frmShow
     Private Sub frmShow_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         lblFarsi.Height = Me.Height / 2
+        picStar.Location = New Point(Me.Width / 2, 10)
 
         ''''''''''''''''''''''''''''''''''''' READ FILE
         Dim strPath As String = String.Format("{0}\", Environment.CurrentDirectory)
@@ -33,12 +35,40 @@ Public Class frmShow
         '''''''''''''''''''''''''''''''''''''
         lblID.Location = New Point(10, 10)
         lblID.Text = Me.Tag
+        CheckStar(Me.Tag)
 
+    End Sub
+
+    Private Sub CheckStar(id As Long)
+        Dim ds As New DataSetTableAdapters.tbSentencesTableAdapter
+        Select Case Convert.ToBoolean(ds.GetDataSelectBy(Val(Me.Tag)).Rows(0).Item(4))
+            Case False
+                picStar.Image = My.Resources.starempty
+                picStar.Tag = 0
+            Case True
+                picStar.Image = My.Resources.starfull
+                picStar.Tag = 1
+        End Select
     End Sub
 
     Protected Overrides Function ProcessCmdKey(ByRef msg As Message, ByVal keyData As Keys) As Boolean
         If keyData = Keys.Escape Then
             Me.Close()
+        End If
+
+        'Set Star
+        If keyData = Keys.Enter Then
+            Dim ds As New DataSetTableAdapters.tbSentencesTableAdapter
+            Select Case picStar.Tag
+                Case 0
+                    picStar.Tag = 1
+                    picStar.Image = My.Resources.starfull
+                    ds.UpdateStar(1, Val(Me.Tag))
+                Case 1
+                    picStar.Tag = 0
+                    picStar.Image = My.Resources.starempty
+                    ds.UpdateStar(0, Val(Me.Tag))
+            End Select
         End If
 
         'Next Sentence
@@ -59,6 +89,8 @@ Public Class frmShow
                     writer.Write(Me.Tag)
                 End Using
                 ''''''''''''''''''''''''''''''''''
+                lblID.Text = Me.Tag
+                CheckStar(Me.Tag)
             End If
         End If
         'Previous Sentence
@@ -75,6 +107,8 @@ Public Class frmShow
                 writer.Write(Me.Tag)
             End Using
             ''''''''''''''''''''''''''''''''''
+            lblID.Text = Me.Tag
+            CheckStar(Me.Tag)
         End If
 
         Return MyBase.ProcessCmdKey(msg, keyData)

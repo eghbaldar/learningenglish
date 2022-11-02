@@ -188,7 +188,7 @@ Partial Class Form1
         Me.btnQuiz.Name = "btnQuiz"
         Me.btnQuiz.Size = New System.Drawing.Size(75, 23)
         Me.btnQuiz.TabIndex = 7
-        Me.btnQuiz.Text = "Give Exam!"
+        Me.btnQuiz.Text = "Stared !"
         Me.btnQuiz.UseVisualStyleBackColor = True
         '
         'btnShow
@@ -220,7 +220,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "My English v4"
+        Me.Text = "My English v5"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()

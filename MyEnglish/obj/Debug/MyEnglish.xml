@@ -22,6 +22,16 @@ MyEnglish
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:MyEnglish.My.Resources.Resources.starempty">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MyEnglish.My.Resources.Resources.starfull">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:MyEnglish.DataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

@@ -7,41 +7,70 @@
         Me.TbSentencesRandomTableAdapter.Fill(Me.DataSet.tbSentencesRandom)
         lblFarsi.Text = DataGridView.Item(4, i).Value
         lblCount.Text = DataGridView.Rows.Count
+        Me.Tag = 0
 
     End Sub
 
     Private Sub TxtEnglish_KeyDown(sender As Object, e As KeyEventArgs) Handles txtEnglish.KeyDown
-        Try
-            If i <= DataGridView.Rows.Count Then
-                If e.KeyCode = Keys.Enter Then
-                    If txtEnglish.Text.Length > 0 Then
-                        If txtEnglish.Text.Trim.ToLower = DataGridView.Item(3, i).Value.ToString.Trim.ToLower Then
-                            MsgBox("Correct!", MsgBoxStyle.Information, "")
-                            i += 1
-                            lblFarsi.Text = DataGridView.Item(4, i).Value
-                            lblCount.Text = Val(lblCount.Text) - 1
-                            txtEnglish.Clear()
-                        Else
-                            If MessageBox.Show("Would you want try it again?" & vbCrLf & "[YES = Let's Try] [NO = Next Question]", "", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-                                txtEnglish.Select()
-                            Else
-                                MsgBox(DataGridView.Item(3, i).Value.ToString, MsgBoxStyle.Information, "The Correct Answer")
-                                txtEnglish.Clear()
-                                i += 1
-                                lblFarsi.Text = DataGridView.Item(4, i).Value
-                                lblCount.Text = Val(lblCount.Text) - 1
-                            End If
 
-                        End If
-                    End If
-                End If
+        If i < DataGridView.Rows.Count Then
+            If e.KeyCode = Keys.Enter Then
+                e.Handled = True
+                e.SuppressKeyPress = True
+                Select Case Me.Tag.ToString
+                    Case "0"
+                        txtEnglish.Text = DataGridView.Item(3, i).Value.ToString.Trim.ToLower
+                        Me.Tag = 1
+                        i += 1
+                    Case "1"
+                        lblFarsi.Text = DataGridView.Item(4, i).Value
+                        lblCount.Text = Val(lblCount.Text) - 1
+                        txtEnglish.Clear()
+                        Me.Tag = 0
+                End Select
             End If
-        Catch ex As Exception
+        Else
+            ''''RESET!
             i = 0
-            lblFarsi.Text = DataGridView.Item(4, i).Value
+            Me.Tag = 0
             txtEnglish.Clear()
-            txtEnglish.Select()
-        End Try
+            lblFarsi.Text = DataGridView.Item(4, i).Value
+            lblCount.Text = DataGridView.Rows.Count
+            MsgBox("Everything has just reseted! Good Luck Dude!")
+        End If
+
+
+        'Try
+        '    If i <= DataGridView.Rows.Count Then
+        '        If e.KeyCode = Keys.Enter Then
+        '            If txtEnglish.Text.Length > 0 Then
+        '                If txtEnglish.Text.Trim.ToLower = DataGridView.Item(3, i).Value.ToString.Trim.ToLower Then
+        '                    MsgBox("Correct!", MsgBoxStyle.Information, "")
+        '                    i += 1
+        '                    lblFarsi.Text = DataGridView.Item(4, i).Value
+        '                    lblCount.Text = Val(lblCount.Text) - 1
+        '                    txtEnglish.Clear()
+        '                Else
+        '                    If MessageBox.Show("Would you want try it again?" & vbCrLf & "[YES = Let's Try] [NO = Next Question]", "", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+        '                        txtEnglish.Select()
+        '                    Else
+        '                        MsgBox(DataGridView.Item(3, i).Value.ToString, MsgBoxStyle.Information, "The Correct Answer")
+        '                        txtEnglish.Clear()
+        '                        i += 1
+        '                        lblFarsi.Text = DataGridView.Item(4, i).Value
+        '                        lblCount.Text = Val(lblCount.Text) - 1
+        '                    End If
+
+        '                End If
+        '            End If
+        '        End If
+        '    End If
+        'Catch ex As Exception
+        '    i = 0
+        '    lblFarsi.Text = DataGridView.Item(4, i).Value
+        '    txtEnglish.Clear()
+        '    txtEnglish.Select()
+        'End Try
     End Sub
 
     Private Sub FormQuiz_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
