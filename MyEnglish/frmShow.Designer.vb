@@ -26,6 +26,7 @@ Partial Class frmShow
         Me.lblEn = New System.Windows.Forms.Label()
         Me.lblID = New System.Windows.Forms.Label()
         Me.picStar = New System.Windows.Forms.PictureBox()
+        Me.BtnExit = New System.Windows.Forms.Label()
         CType(Me.picStar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,6 +70,7 @@ Partial Class frmShow
         'picStar
         '
         Me.picStar.BackColor = System.Drawing.Color.LemonChiffon
+        Me.picStar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.picStar.Image = Global.MyEnglish.My.Resources.Resources.starempty
         Me.picStar.InitialImage = Global.MyEnglish.My.Resources.Resources.starempty
         Me.picStar.Location = New System.Drawing.Point(260, 12)
@@ -79,11 +81,24 @@ Partial Class frmShow
         Me.picStar.TabStop = False
         Me.picStar.Tag = "0"
         '
+        'BtnExit
+        '
+        Me.BtnExit.AutoSize = True
+        Me.BtnExit.BackColor = System.Drawing.Color.LemonChiffon
+        Me.BtnExit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExit.ForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.BtnExit.Location = New System.Drawing.Point(476, 65)
+        Me.BtnExit.Name = "BtnExit"
+        Me.BtnExit.Size = New System.Drawing.Size(24, 13)
+        Me.BtnExit.TabIndex = 4
+        Me.BtnExit.Text = "Exit"
+        '
         'frmShow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 371)
+        Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.picStar)
         Me.Controls.Add(Me.lblID)
         Me.Controls.Add(Me.lblEn)
@@ -102,4 +117,5 @@ Partial Class frmShow
     Friend WithEvents lblEn As Label
     Friend WithEvents lblID As Label
     Friend WithEvents picStar As PictureBox
+    Friend WithEvents BtnExit As Label
 End Class

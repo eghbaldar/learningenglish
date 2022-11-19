@@ -38,10 +38,13 @@ Partial Class FormQuiz
         Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
         Me.TbSentencesRandomTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesRandomTableAdapter()
+        Me.picStar = New System.Windows.Forms.PictureBox()
+        Me.lblID = New System.Windows.Forms.Label()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbSentencesRandomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picStar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblFarsi
@@ -61,8 +64,9 @@ Partial Class FormQuiz
         Me.txtEnglish.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtEnglish.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEnglish.Location = New System.Drawing.Point(12, 208)
+        Me.txtEnglish.Multiline = True
         Me.txtEnglish.Name = "txtEnglish"
-        Me.txtEnglish.Size = New System.Drawing.Size(673, 38)
+        Me.txtEnglish.Size = New System.Drawing.Size(673, 109)
         Me.txtEnglish.TabIndex = 1
         '
         'DataGridView
@@ -75,7 +79,7 @@ Partial Class FormQuiz
         Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.IdDataGridViewTextBoxColumn, Me.DatetimeDataGridViewTextBoxColumn, Me.EnglishDataGridViewTextBoxColumn, Me.FarsiDataGridViewTextBoxColumn})
         Me.DataGridView.DataSource = Me.TbSentencesRandomBindingSource
         Me.DataGridView.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.DataGridView.Location = New System.Drawing.Point(0, 268)
+        Me.DataGridView.Location = New System.Drawing.Point(0, 323)
         Me.DataGridView.MultiSelect = False
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.ReadOnly = True
@@ -132,9 +136,9 @@ Partial Class FormQuiz
         'lblCount
         '
         Me.lblCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCount.Location = New System.Drawing.Point(12, 9)
+        Me.lblCount.Location = New System.Drawing.Point(15, 9)
         Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(673, 53)
+        Me.lblCount.Size = New System.Drawing.Size(670, 53)
         Me.lblCount.TabIndex = 6
         Me.lblCount.Text = "0"
         Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -152,12 +156,35 @@ Partial Class FormQuiz
         '
         Me.TbSentencesRandomTableAdapter.ClearBeforeFill = True
         '
+        'picStar
+        '
+        Me.picStar.BackColor = System.Drawing.Color.PaleGoldenrod
+        Me.picStar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.picStar.Image = Global.MyEnglish.My.Resources.Resources.starempty
+        Me.picStar.InitialImage = Global.MyEnglish.My.Resources.Resources.starempty
+        Me.picStar.Location = New System.Drawing.Point(634, 8)
+        Me.picStar.Name = "picStar"
+        Me.picStar.Size = New System.Drawing.Size(51, 53)
+        Me.picStar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picStar.TabIndex = 7
+        Me.picStar.TabStop = False
+        Me.picStar.Tag = "0"
+        '
+        'lblID
+        '
+        Me.lblID.Location = New System.Drawing.Point(18, 9)
+        Me.lblID.Name = "lblID"
+        Me.lblID.Size = New System.Drawing.Size(103, 52)
+        Me.lblID.TabIndex = 8
+        '
         'FormQuiz
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGoldenrod
-        Me.ClientSize = New System.Drawing.Size(700, 253)
+        Me.ClientSize = New System.Drawing.Size(700, 321)
+        Me.Controls.Add(Me.lblID)
+        Me.Controls.Add(Me.picStar)
         Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.DataGridView)
         Me.Controls.Add(Me.txtEnglish)
@@ -173,6 +200,7 @@ Partial Class FormQuiz
         CType(Me.TbSentencesRandomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picStar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -192,4 +220,6 @@ Partial Class FormQuiz
     Friend WithEvents lblCount As Label
     Friend WithEvents TbSentencesRandomBindingSource As BindingSource
     Friend WithEvents TbSentencesRandomTableAdapter As DataSetTableAdapters.tbSentencesRandomTableAdapter
+    Friend WithEvents picStar As PictureBox
+    Friend WithEvents lblID As Label
 End Class

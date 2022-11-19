@@ -7,8 +7,22 @@
         Me.TbSentencesRandomTableAdapter.Fill(Me.DataSet.tbSentencesRandom)
         lblFarsi.Text = DataGridView.Item(4, i).Value
         lblCount.Text = DataGridView.Rows.Count
+        lblID.Text = DataGridView.Item(1, i).Value
+        CheckStar(Val(lblID.Text))
         Me.Tag = 0
 
+    End Sub
+
+    Private Sub CheckStar(id As Long)
+        Dim ds As New DataSetTableAdapters.tbSentencesTableAdapter
+        Select Case Convert.ToBoolean(ds.GetDataSelectBy(Val(id)).Rows(0).Item(4))
+            Case False
+                picStar.Image = My.Resources.starempty
+                picStar.Tag = 0
+            Case True
+                picStar.Image = My.Resources.starfull
+                picStar.Tag = 1
+        End Select
     End Sub
 
     Private Sub TxtEnglish_KeyDown(sender As Object, e As KeyEventArgs) Handles txtEnglish.KeyDown
@@ -21,11 +35,15 @@
                     Case "0"
                         txtEnglish.Text = DataGridView.Item(3, i).Value.ToString.Trim.ToLower
                         Me.Tag = 1
+                        lblID.Text = DataGridView.Item(1, i).Value
+                        CheckStar(Val(lblID.Text))
                         i += 1
                     Case "1"
                         lblFarsi.Text = DataGridView.Item(4, i).Value
                         lblCount.Text = Val(lblCount.Text) - 1
                         txtEnglish.Clear()
+                        lblID.Text = DataGridView.Item(1, i).Value
+                        CheckStar(Val(lblID.Text))
                         Me.Tag = 0
                 End Select
             End If
@@ -84,5 +102,23 @@
         End If
         Return MyBase.ProcessCmdKey(msg, keyData)
     End Function
+
+    Private Sub PicStar_Click(sender As Object, e As EventArgs) Handles picStar.Click
+        GoEnter()
+    End Sub
+
+    Private Sub GoEnter()
+        Dim ds As New DataSetTableAdapters.tbSentencesTableAdapter
+        Select Case picStar.Tag
+            Case 0
+                picStar.Tag = 1
+                picStar.Image = My.Resources.starfull
+                ds.UpdateStar(1, Val(lblID.Text))
+            Case 1
+                picStar.Tag = 0
+                picStar.Image = My.Resources.starempty
+                ds.UpdateStar(0, Val(lblID.Text))
+        End Select
+    End Sub
 
 End Class

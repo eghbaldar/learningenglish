@@ -29,7 +29,7 @@ Public Class Form1
                     MsgBox("Updated", MsgBoxStyle.Information, "")
                 End If
 
-                Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences)
+                Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences, "")
                 txtEnglish.Clear()
                 txtEnglish.Select()
                 txtFarsi.Clear()
@@ -42,7 +42,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences)
+        Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences, "")
     End Sub
 
     Private Sub DataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView.CellClick
@@ -78,7 +78,7 @@ Public Class Form1
             Case "Delete"
                 If MessageBox.Show("Sure?", "", MessageBoxButtons.YesNo) = DialogResult.Yes Then
                     ds.DeleteSentence(Val(clickCell_ID.Value))
-                    Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences)
+                    Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences, "")
                     txtEnglish.Select()
                 End If
         End Select
@@ -91,6 +91,20 @@ Public Class Form1
 
     Private Sub BtnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
         frmShow.ShowDialog()
+    End Sub
+
+    Private Sub BtnHideShow_Click(sender As Object, e As EventArgs) Handles btnHideShow.Click
+        If btnHideShow.Text.Trim.ToLower = "hide" Then
+            Me.Size = New Size(749, 350)
+            btnHideShow.Text = "Show"
+        Else
+            Me.Size = New Size(749, 625)
+            btnHideShow.Text = "Hide"
+        End If
+    End Sub
+
+    Private Sub TxtSearch_KeyUp(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyUp
+        Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences, txtSearch.Text.Trim)
     End Sub
 
 End Class
