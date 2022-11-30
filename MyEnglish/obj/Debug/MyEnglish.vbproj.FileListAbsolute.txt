@@ -25,3 +25,9 @@ D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.exe
 D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.xml
 D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.pdb
 D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.frmShow.resources
+D:\_Developing_\MyEnglish\MyEnglish\bin\Debug\Interop.WMPLib.dll
+D:\_Developing_\MyEnglish\MyEnglish\bin\Debug\AxInterop.WMPLib.dll
+D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\Interop.WMPLib.dll
+D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\Interop.WMPRichPreviewLauncher.dll
+D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\AxInterop.WMPLib.dll
+D:\_Developing_\MyEnglish\MyEnglish\obj\Debug\MyEnglish.vbproj.ResolveComReference.cache

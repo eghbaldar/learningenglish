@@ -1,4 +1,8 @@
 ﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Media
+Imports AxWMPLib
+Imports WMPLib
 
 Public Class Form1
 
@@ -107,4 +111,63 @@ Public Class Form1
         Me.TbSentencesTableAdapter.Fill(Me.DataSet.tbSentences, txtSearch.Text.Trim)
     End Sub
 
+    Shared URL() As String
+    Dim URL_LENGTH As Integer
+    Dim URL_CURRENT As Integer
+    Dim FirstMyLoop As Integer
+    Dim MyLoop As Byte
+
+    Private Sub BtnPronunciation_Click(sender As Object, e As EventArgs) Handles btnPronunciation.Click
+        Dim op As New FolderBrowserDialog
+        op.ShowDialog()
+
+        URL = Directory.GetFiles(op.SelectedPath)
+        'To remove the files in which there are not standard audio format
+        For i As Integer = 0 To URL.Length - 1
+            If Path.GetExtension(URL(i)) <> ".wav" And Path.GetExtension(URL(i)) <> ".mp3" Then
+                URL = URL.Except({URL(i)}).ToArray
+            End If
+        Next
+        '----------------------------
+        URL_LENGTH = URL.Length
+        URL_CURRENT = 0
+        FirstMyLoop = Val(InputBox("What would like to repeat it?")) - 1
+        MyLoop = FirstMyLoop
+        AxWindowsMediaPlayer1.URL = URL(URL_CURRENT)
+        SetPronunciationaWord()
+    End Sub
+
+    Private Sub AxWindowsMediaPlayer1_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent) Handles AxWindowsMediaPlayer1.PlayStateChange
+        If AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsMediaEnded Then
+            Timer1.Interval = 100
+            Timer1.Enabled = True
+        End If
+    End Sub
+
+    Sub SetPronunciationaWord()
+        Me.Text = Path.GetFileNameWithoutExtension(URL(URL_CURRENT)).ToUpper
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If (MyLoop > 0) And URL_CURRENT < URL_LENGTH Then
+            AxWindowsMediaPlayer1.URL = URL(URL_CURRENT)
+            SetPronunciationaWord()
+            Timer1.Enabled = False
+            MyLoop -= 1
+        Else
+            If URL_CURRENT < URL_LENGTH Then
+                MyLoop = FirstMyLoop
+                AxWindowsMediaPlayer1.URL = URL(URL_CURRENT)
+                SetPronunciationaWord()
+                URL_CURRENT += 1
+                Timer1.Enabled = False
+            Else
+                URL_CURRENT = 0
+                MyLoop = 0
+                Timer1.Enabled = False
+                Me.Text = "My English v10.1"
+            End If
+        End If
+
+    End Sub
 End Class

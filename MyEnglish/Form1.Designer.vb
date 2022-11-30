@@ -30,6 +30,10 @@ Partial Class Form1
         Me.txtFarsi = New System.Windows.Forms.TextBox()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EnglishDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FarsiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet = New MyEnglish.DataSet()
         Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,15 +42,15 @@ Partial Class Form1
         Me.btnQuiz = New System.Windows.Forms.Button()
         Me.btnShow = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.EnglishDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FarsiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TbSentencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet = New MyEnglish.DataSet()
         Me.TbSentencesTableAdapter = New MyEnglish.DataSetTableAdapters.tbSentencesTableAdapter()
+        Me.btnPronunciation = New System.Windows.Forms.Button()
+        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip.SuspendLayout()
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip.SuspendLayout()
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtEnglish
@@ -117,6 +121,32 @@ Partial Class Form1
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 50
         '
+        'EnglishDataGridViewTextBoxColumn
+        '
+        Me.EnglishDataGridViewTextBoxColumn.DataPropertyName = "english"
+        Me.EnglishDataGridViewTextBoxColumn.HeaderText = "English"
+        Me.EnglishDataGridViewTextBoxColumn.Name = "EnglishDataGridViewTextBoxColumn"
+        Me.EnglishDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EnglishDataGridViewTextBoxColumn.Width = 300
+        '
+        'FarsiDataGridViewTextBoxColumn
+        '
+        Me.FarsiDataGridViewTextBoxColumn.DataPropertyName = "farsi"
+        Me.FarsiDataGridViewTextBoxColumn.HeaderText = "Farsi"
+        Me.FarsiDataGridViewTextBoxColumn.Name = "FarsiDataGridViewTextBoxColumn"
+        Me.FarsiDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FarsiDataGridViewTextBoxColumn.Width = 300
+        '
+        'TbSentencesBindingSource
+        '
+        Me.TbSentencesBindingSource.DataMember = "tbSentences"
+        Me.TbSentencesBindingSource.DataSource = Me.DataSet
+        '
+        'DataSet
+        '
+        Me.DataSet.DataSetName = "DataSet"
+        Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ContextMenuStrip
         '
         Me.ContextMenuStrip.ImageScalingSize = New System.Drawing.Size(40, 40)
@@ -156,7 +186,7 @@ Partial Class Form1
         '
         Me.btnQuiz.Location = New System.Drawing.Point(643, 8)
         Me.btnQuiz.Name = "btnQuiz"
-        Me.btnQuiz.Size = New System.Drawing.Size(75, 23)
+        Me.btnQuiz.Size = New System.Drawing.Size(75, 31)
         Me.btnQuiz.TabIndex = 7
         Me.btnQuiz.Text = "Stared !"
         Me.btnQuiz.UseVisualStyleBackColor = True
@@ -165,7 +195,7 @@ Partial Class Form1
         '
         Me.btnShow.Location = New System.Drawing.Point(569, 8)
         Me.btnShow.Name = "btnShow"
-        Me.btnShow.Size = New System.Drawing.Size(75, 23)
+        Me.btnShow.Size = New System.Drawing.Size(75, 30)
         Me.btnShow.TabIndex = 8
         Me.btnShow.Text = "SHOW"
         Me.btnShow.UseVisualStyleBackColor = True
@@ -177,41 +207,38 @@ Partial Class Form1
         Me.txtSearch.Size = New System.Drawing.Size(703, 21)
         Me.txtSearch.TabIndex = 9
         '
-        'EnglishDataGridViewTextBoxColumn
-        '
-        Me.EnglishDataGridViewTextBoxColumn.DataPropertyName = "english"
-        Me.EnglishDataGridViewTextBoxColumn.HeaderText = "English"
-        Me.EnglishDataGridViewTextBoxColumn.Name = "EnglishDataGridViewTextBoxColumn"
-        Me.EnglishDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EnglishDataGridViewTextBoxColumn.Width = 300
-        '
-        'FarsiDataGridViewTextBoxColumn
-        '
-        Me.FarsiDataGridViewTextBoxColumn.DataPropertyName = "farsi"
-        Me.FarsiDataGridViewTextBoxColumn.HeaderText = "Farsi"
-        Me.FarsiDataGridViewTextBoxColumn.Name = "FarsiDataGridViewTextBoxColumn"
-        Me.FarsiDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FarsiDataGridViewTextBoxColumn.Width = 300
-        '
-        'TbSentencesBindingSource
-        '
-        Me.TbSentencesBindingSource.DataMember = "tbSentences"
-        Me.TbSentencesBindingSource.DataSource = Me.DataSet
-        '
-        'DataSet
-        '
-        Me.DataSet.DataSetName = "DataSet"
-        Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TbSentencesTableAdapter
         '
         Me.TbSentencesTableAdapter.ClearBeforeFill = True
+        '
+        'btnPronunciation
+        '
+        Me.btnPronunciation.Location = New System.Drawing.Point(443, 8)
+        Me.btnPronunciation.Name = "btnPronunciation"
+        Me.btnPronunciation.Size = New System.Drawing.Size(108, 31)
+        Me.btnPronunciation.TabIndex = 10
+        Me.btnPronunciation.Text = "Pronunciation"
+        Me.btnPronunciation.UseVisualStyleBackColor = True
+        '
+        'AxWindowsMediaPlayer1
+        '
+        Me.AxWindowsMediaPlayer1.Enabled = True
+        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(155, 8)
+        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
+        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(282, 31)
+        Me.AxWindowsMediaPlayer1.TabIndex = 11
+        '
+        'Timer1
+        '
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(733, 586)
+        Me.Controls.Add(Me.AxWindowsMediaPlayer1)
+        Me.Controls.Add(Me.btnPronunciation)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnShow)
         Me.Controls.Add(Me.btnQuiz)
@@ -228,11 +255,12 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "My English v8"
+        Me.Text = "My English v10.2"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip.ResumeLayout(False)
         CType(Me.TbSentencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip.ResumeLayout(False)
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -257,4 +285,7 @@ Partial Class Form1
     Friend WithEvents btnQuiz As Button
     Friend WithEvents btnShow As Button
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnPronunciation As Button
+    Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents Timer1 As Timer
 End Class
